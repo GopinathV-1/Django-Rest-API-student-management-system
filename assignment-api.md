@@ -9,28 +9,27 @@ To submit or view an order, you need to Authenticate.
 You can login by both ways such as Basic Authentication and Token Authentication.
 
 1. Basic Authentication:
-    In postman select basic auth in authorization and provide the provide the username 
+ In postman select basic auth in authorization and provide the provide the username 
 and password of the super-user.  
 
 2. Token Authentication:
     
-    POST `/api-token-auth/`
+ POST `/api-token-auth/`
     
-    The request body needs to be in JSON format and include the following properties:
-    - `username` - String
-    - `password` - String
+ The request body needs to be in JSON format and include the following properties:
+ - `username` - String
+ - `password` - String
     
-    Example
-    ```
-    {
-        "username": "Valentin",
-        "password": "1234"
-    }```
+ Example
+    
+ ```{
+    "username": "Valentin",
+    "password": "1234"
+ }```
 
-    you will get a token
+ you will get a token
 
-    Now select headers then, create a key called "Authorization" and a value 
-    called "Token yoursuperusertoken"
+ Now select headers then, create a key called "Authorization" and a value called "Token yoursuperusertoken"
 
 ## Endpoints ##
 
