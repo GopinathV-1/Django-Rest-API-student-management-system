@@ -67,14 +67,14 @@ To run this, you need to create and provide the environment values in .env file.
 
 ### Move to project directory
 ```bash
-$ cd dataproject-django-rest-framework
+$ cd django-toy-project
 ```
 
 ### Create .env file
 create a .env file **inside studentapp folder**
 
 ```bash
-$ cd api
+$ cd studentapp
 $ touch .env
 ```
 #### provide these information inside .env file.
@@ -110,10 +110,12 @@ python3 manage.py createsuperuser
 $ python3 manage.py runserver
 
 ```
-Now you can access the app on your local server but for performing operation in browser you need to provide the username and password of superuser.
 
-for running the api in browser please follow the procedures in **assignment-api.md**
+you can create the user by visiting register page ```http://127.0.0.1:8000/register/```
 
+Now you can access the app on your local server but for performing operation in browser you need to provide the username and password of user created.
+
+you can access the assignments api page through ```http://127.0.0.1:8000/viewset/assignments/```
 #### part 4: Postman
 
 ## Import collection ##
@@ -137,7 +139,7 @@ You can login by both ways such as Basic Authentication and Token Authentication
 
 1. Basic Authentication:
 In postman select basic auth in authorization and provide the provide the username 
-and password of the super-user.  
+and password of the registered user.  
 
 2. Token Authentication:
     
@@ -154,9 +156,11 @@ Example
     "password": "1234"
 }
 ```
-you will get a token
 
-Now select headers then, create a key called "Authorization" and a value called "Token yoursuperusertoken"
+you will get a token - youusertoken
+
+Now select headers then, create a key called "Authorization" and a value 
+called "Token yourusertoken"
 
 ## Run collection ##
 Now you will be able to run the collection for testing.

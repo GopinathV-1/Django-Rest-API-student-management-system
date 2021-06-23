@@ -6,13 +6,12 @@ This API allows you to create an assignment.
 
 To submit or view an order, you need to Authenticate.
 
-You can login by both ways such as Basic Authentication and Token Authentication.
+* Basic Authentication:
 
-1. Basic Authentication:
- In postman select basic auth in authorization and provide the provide the username 
-and password of the super-user.  
+In postman select basic auth in authorization and provide the provide the username 
+and password of the registered-user.  
 
-2. Token Authentication:
+* Token Authentication:
     
 POST `/api-token-auth/`
     
@@ -28,9 +27,9 @@ Example
 }
 ```
 
-you will get a token
+you will get a token - yourusertoken
 
-Now select headers then, create a key called "Authorization" and a value called "Token yoursuperusertoken"
+Now select headers then, create a key called "Authorization" and a value called "Token yourusertoken"
 
 ## Endpoints ##
 
