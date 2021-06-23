@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "7b0297a5-6772-42dd-8e57-3296cbee4e78",
+		"name": "Assignment api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get list of assignments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();   ",
+							"pm.globals.set(\"assignmentid\", response[0].id)",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "gopinath",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/viewset/assignments/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"viewset",
+						"assignments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/viewset/assignments/:id/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"viewset",
+						"assignments",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{assignmentid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get first assignment to submit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/viewset/assignments/newest/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"viewset",
+						"assignments",
+						"newest",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const subject = [\"English\", \"Tamil\", \"Maths\", \"Physics\", \"Chemistry\", \"Biology\"];",
+							"const choice = subject[Math.floor(Math.random() * subject.length)];",
+							"pm.globals.set(\"subject\", choice);",
+							"function randomDate(start, end) {",
+							"    var d = new Date(start.getTime() + Math.random() * (end.getTime() -                     start.getTime())),",
+							"        month = '' + (d.getMonth() + 1),",
+							"        day = '' + d.getDate(),",
+							"        year = d.getFullYear();",
+							"",
+							"    if (month.length < 2) month = '0' + month;",
+							"    if (day.length < 2) day = '0' + day;",
+							"",
+							"    return [year, month, day].join('-');",
+							"}",
+							"const date = randomDate(new Date(2021, 6, 23), new Date());",
+							"pm.globals.set(\"due_date\", date);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subject\": \"{{subject}}\",\n    \"title\": \"Respiration\",\n    \"content\": \"Draw the respiratory system of Animals\",\n    \"staff\": \"{{$randomFullName}}\",\n    \"due_date\": \"{{due_date}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/viewset/assignments/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"viewset",
+						"assignments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const subject = [\"English\", \"Tamil\", \"Maths\", \"Physics\", \"Chemistry\", \"Biology\"];",
+							"const choice = subject[Math.floor(Math.random() * subject.length)];",
+							"pm.globals.set(\"subject\", choice);",
+							"function randomDate(start, end) {",
+							"    var d = new Date(start.getTime() + Math.random() * (end.getTime() -                     start.getTime())),",
+							"        month = '' + (d.getMonth() + 1),",
+							"        day = '' + d.getDate(),",
+							"        year = d.getFullYear();",
+							"",
+							"    if (month.length < 2) month = '0' + month;",
+							"    if (day.length < 2) day = '0' + day;",
+							"",
+							"    return [year, month, day].join('-');",
+							"}",
+							"const date = randomDate(new Date(2021, 6, 23), new Date());",
+							"pm.globals.set(\"due_date\", date);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subject\": \"{{subject}}\",\n    \"title\": \"Trignomentry\",\n    \"content\": \"1. Find HCF of 128 and 256\",\n    \"staff\": \"{{$randomFullName}}\",\n    \"due_date\": \"{{due_date}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/viewset/assignments/:id/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"viewset",
+						"assignments",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{assignmentid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete assignment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/viewset/assignments/:id/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"viewset",
+						"assignments",
+						":id",
+						""
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{assignmentid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

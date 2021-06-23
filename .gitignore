@@ -1,0 +1,4 @@
+# Ignore files 
+api/.env
+api/__pycache__
+assignment/__pycache__
