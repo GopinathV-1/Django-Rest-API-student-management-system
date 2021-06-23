@@ -67,14 +67,14 @@ To run this, you need to create and provide the environment values in .env file.
 
 ### Move to project directory
 ```bash
-$ cd django-toy-project
+$ cd dataproject-django-rest-framework
 ```
 
 ### Create .env file
 create a .env file **inside studentapp folder**
 
 ```bash
-$ cd studentapp
+$ cd api
 $ touch .env
 ```
 #### provide these information inside .env file.
