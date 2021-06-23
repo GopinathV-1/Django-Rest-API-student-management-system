@@ -14,22 +14,23 @@ and password of the super-user.
 
 2. Token Authentication:
     
- POST `/api-token-auth/`
+POST `/api-token-auth/`
     
- The request body needs to be in JSON format and include the following properties:
- - `username` - String
- - `password` - String
+The request body needs to be in JSON format and include the following properties:
+- `username` - String
+- `password` - String
     
- Example
-    
- ```{
+Example
+```
+{
     "username": "Valentin",
     "password": "1234"
- }```
+}
+```
 
- you will get a token
+you will get a token
 
- Now select headers then, create a key called "Authorization" and a value called "Token yoursuperusertoken"
+Now select headers then, create a key called "Authorization" and a value called "Token yoursuperusertoken"
 
 ## Endpoints ##
 
