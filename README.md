@@ -112,6 +112,8 @@ $ python3 manage.py runserver
 ```
 Now you can access the app on your local server but for performing operation in browser you need to provide the username and password of superuser.
 
+for running the api in browser please follow the procedures in **assignment-api.md**
+
 #### part 4: Postman
 
 ## Import collection ##
