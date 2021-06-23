@@ -151,8 +151,7 @@ Example
     "username": "Valentin",
     "password": "1234"
 }
-    ```
-
+```
 you will get a token
 
 Now select headers then, create a key called "Authorization" and a value called "Token yoursuperusertoken"
