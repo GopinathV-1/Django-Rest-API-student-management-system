@@ -1,6 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserRegisterForm
 from django.contrib import messages
+from rest_framework.authtoken.models import Token
+
+
+def home(request):
+    return render(request, 'base.html')
 
 
 def register(request):
@@ -14,3 +19,9 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
+
+
+def token(request):
+    token = get_object_or_404(Token, user=request.user)
+    print(token)
+    return render(request, 'token.html', {'token': token})
