@@ -44,6 +44,7 @@ postgres=# \q
 
 ### Install the virtualenv package
 ```bash
+$ cd ..
 $ pip install virtualenv
 ```
 ### Create the virtual environment
@@ -63,6 +64,7 @@ Now you can load the requirements.txt.
 Before running the application, you need to have some packages preinstalled. So I have provided all the required packages and their versions in requirements.txt file by running the below command you will be able to install all the packages.
 
 ```bash
+$ cd django-rest-framework
 $ pip install -r requirements.txt
 ```
 
