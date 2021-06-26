@@ -24,6 +24,11 @@ git clone https://gitlab.com/mountblue/cohort-16-python/gopinath_v/dataproject-d
 
 ### Part 1: Create Database and virtualenv
 
+### Move to project directory
+```bash
+$ cd django-rest-framework
+```
+
 ### Create Database
 ```bash
 $ sudo -u postgres psql
@@ -64,11 +69,6 @@ $ pip install -r requirements.txt
 #### Part 1: Create and provide information to .env file.
 
 To run this, you need to create and provide the environment values in .env file.
-
-### Move to project directory
-```bash
-$ cd django-toy-project
-```
 
 ### Create .env file
 create a .env file **inside studentapp folder**
