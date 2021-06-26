@@ -100,6 +100,7 @@ Provide **secret key** in .env file.
 #### for creating and accessing admin operations create superuser
 
 ```bash
+cd ..
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py createsuperuser
