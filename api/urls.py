@@ -23,7 +23,7 @@ from rest_framework.authtoken import views
 router = DefaultRouter()
 router.register(r'assignments', api.AssignmentViewSet)
 urlpatterns = [
-    path('viewset/', include(router.urls)),
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-token-auth/', views.obtain_auth_token),
     path('register/', user_views.register, name='register'),
