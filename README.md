@@ -26,7 +26,7 @@ git clone https://gitlab.com/mountblue/cohort-16-python/gopinath_v/dataproject-d
 
 ### Move to project directory
 ```bash
-$ cd django-rest-framework
+$ cd dataproject-django-rest-framework
 ```
 
 ### Create Database
@@ -64,7 +64,7 @@ Now you can load the requirements.txt.
 Before running the application, you need to have some packages preinstalled. So I have provided all the required packages and their versions in requirements.txt file by running the below command you will be able to install all the packages.
 
 ```bash
-$ cd django-rest-framework
+$ cd dataproject-django-rest-framework
 $ pip install -r requirements.txt
 ```
 
