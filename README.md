@@ -125,6 +125,7 @@ you can access the assignments api page through ```http://127.0.0.1:8000/viewset
 sudo snap install postman
 ```
 ## Import collection ##
+1. goto to import
 
 you can see the import option in your work space, click that and drop the file
 **Assignment api.postman_collection.json** in that.
@@ -163,10 +164,12 @@ Example
 }
 ```
 
-you will get a token - youusertoken
+you will get a token - yourusertoken
 
 Now select headers then, create a key called "Authorization" and a value 
 called "Token yourusertoken"
+
+NOTE: you need to provide authentication for each request.
 
 ## Run collection ##
 Now you will be able to run the collection for testing.
