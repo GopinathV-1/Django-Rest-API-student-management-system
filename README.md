@@ -114,7 +114,7 @@ $ python3 manage.py runserver
 
 ```
 
-you can create the user by visiting register page ```http://127.0.0.1:8000/register/```
+you can create the user by visiting register page ```http://127.0.0.1:8000/```
 
 Now you can access the app on your local server but for performing operation in browser you need to provide the username and password of user created.
 
