@@ -120,7 +120,10 @@ Now you can access the app on your local server but for performing operation in 
 
 you can access the assignments api page through ```http://127.0.0.1:8000/viewset/assignments/```
 #### part 4: Postman
-
+## Install postman
+```bash
+sudo snap install postman
+```
 ## Import collection ##
 
 you can see the import option in your work space, click that and drop the file
