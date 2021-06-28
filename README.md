@@ -68,7 +68,7 @@ $ cd dataproject-django-rest-framework
 $ pip install -r requirements.txt
 ```
 
-#### Part 1: Create and provide information to .env file.
+#### Part 2: Create and provide information to .env file.
 
 To run this, you need to create and provide the environment values in .env file.
 
