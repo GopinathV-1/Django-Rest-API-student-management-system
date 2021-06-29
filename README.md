@@ -169,8 +169,6 @@ you will get a token - yourusertoken
 Now select headers then, create a key called "Authorization" and a value 
 called "Token yourusertoken"
 
-NOTE: you need to provide authentication for each request.
-
 ## Run collection ##
 Now you will be able to run the collection for testing.
 
