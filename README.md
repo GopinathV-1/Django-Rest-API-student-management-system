@@ -17,7 +17,7 @@ We all know that computers can store and retrieve data easily, so in order to do
 To get started with the code on this repo, you need to either *clone* or *download* this repo into your machine just as shown below;
 
 ```bash
-git clone https://gitlab.com/mountblue/cohort-16-python/gopinath_v/dataproject-django-rest-framework
+git clone git@gitlab.com:mountblue/cohort-16-python/gopinath_v/dataproject-django-rest-framework.git
 ```
 
 ## Running the App
