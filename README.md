@@ -128,7 +128,11 @@ sudo snap install postman
 1. goto to import
 
 you can see the import option in your work space, click that and drop the file
-**Assignment api.postman_collection.json** in that.
+**Assignment api (AS ADMIN).postman_collection.json** and **Assignment api (AS STUDENT).postman_collection.json** in that.
+
+In get token request in **Assignment api (AS ADMIN).postman_collection.json** provide the superuser credentials.
+
+In get token request in **Assignment api (AS STUDENT).postman_collection.json** provide normal user credentials.
 
 ## Global variable ##
 
@@ -164,10 +168,7 @@ Example
 }
 ```
 
-you will get a token - yourusertoken
-
-Now select headers then, create a key called "Authorization" and a value 
-called "Token yourusertoken"
+you will get a token - yourusertoken and it will be automatically set as global variable.
 
 ## Run collection ##
 Now you will be able to run the collection for testing.
