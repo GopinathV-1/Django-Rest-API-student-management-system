@@ -11,14 +11,15 @@ You might be wondering that how the application performs many operations like cr
 
 We all know that computers can store and retrieve data easily, so in order to do this operation, we used the Database. We have used queries to pick and formulate the data in a specific structure from Database. This repo consists of a basic example of how to do that.
 
+## Explore the app
+![Click here](https://flask1project1.herokuapp.com/)
 
 ## Getting start
 
 To get started with the code on this repo, you need to either *clone* or *download* this repo into your machine just as shown below;
 
 ```bash
-git clone git@gitlab.com:mountblue/cohort-16-python/gopinath_v/dataproject-django-rest-framework.git
-```
+git clone git@github.com:GopinathV-1/flask-student-management-system.git
 
 ## Running the App
 
